@@ -1,0 +1,559 @@
+/* ==============================
+   1. ОСНОВНЫЕ НАСТРОЙКИ
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #E8E9E5;
+    color: #354751;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==============================
+   2. ПЕРВЫЙ ЭКРАН
+============================== */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 30px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(28, 42, 49, 0.48),
+            rgba(28, 42, 49, 0.58)
+        ),
+        url("house.jpg");
+
+    background-size: cover;
+    background-position: 60% 40%;
+    color: #FFFFFF;
+}
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-bottom: 25px;
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -2px;
+    color: #FFFFFF;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 32px;
+    font-size: clamp(16px, 2vw, 20px);
+    color: #F3F3F0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 26px;
+    border: 1px solid #354751;
+    border-radius: 6px;
+    background: #354751;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #263740;
+    border-color: #263740;
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   3. ОБЩИЕ НАСТРОЙКИ СЕКЦИЙ
+============================== */
+
+.features,
+.prices,
+.gallery,
+.booking {
+    padding: 80px 7%;
+}
+
+.section-label {
+    margin-bottom: 12px;
+    color: #785A42;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.features h2,
+.prices h2,
+.gallery h2,
+.booking h2 {
+    margin-bottom: 18px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.section-text {
+    max-width: 700px;
+    margin-bottom: 35px;
+    color: #4D5B60;
+    font-size: 17px;
+}
+
+
+/* ==============================
+   4. СЕКЦИЯ ПРЕИМУЩЕСТВ
+============================== */
+
+.features {
+    background: #E8E9E5;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    padding: 28px;
+    border: 1px solid #D2D7D7;
+    border-radius: 10px;
+    background: #F7F6F1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(53, 71, 81, 0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #785A42;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #4D5B60;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   5. СЕКЦИЯ ЦЕН
+============================== */
+
+.prices {
+    background: #8297A3;
+    color: #FFFFFF;
+}
+
+.prices .section-label {
+    color: #F1D8BC;
+}
+
+.prices h2 {
+    color: #FFFFFF;
+}
+
+.prices .section-text {
+    color: #F2F3F0;
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.price-card {
+    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 10px;
+    background: #F7F6F1;
+    color: #354751;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(28, 42, 49, 0.12);
+}
+
+.price-card h3 {
+    margin-bottom: 20px;
+    color: #785A42;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.price-card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E1E1DA;
+    color: #4D5B60;
+    font-size: 15px;
+}
+
+.price-card p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.price-card strong {
+    flex-shrink: 0;
+    color: #785A42;
+    font-size: 17px;
+}
+
+
+/* ==============================
+   6. ГАЛЕРЕЯ ФОТОГРАФИЙ
+============================== */
+
+.gallery {
+    background: #E8E9E5;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #D2D7D7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(53, 71, 81, 0.15);
+}
+
+
+/* ==============================
+   7. СЕКЦИЯ БРОНИРОВАНИЯ
+============================== */
+
+.booking {
+    background: #8297A3;
+    color: #FFFFFF;
+}
+
+.booking .section-label {
+    color: #F1D8BC;
+}
+
+.booking h2 {
+    color: #FFFFFF;
+}
+
+.booking-text {
+    max-width: 650px;
+    margin-bottom: 28px;
+    color: #F2F3F0;
+    font-size: 17px;
+}
+
+.booking-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.booking-link {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #D2D7D7;
+    border-radius: 6px;
+    background: #F7F6F1;
+    color: #354751;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.booking-link:hover {
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   8. ПОДВАЛ САЙТА
+============================== */
+
+footer {
+    padding: 25px 7%;
+    background: #354751;
+    color: #E8E9E5;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: #F1D8BC;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+
+/* ==============================
+   9. ПЛАНШЕТЫ
+============================== */
+
+@media (max-width: 900px) {
+    .features,
+    .prices,
+    .gallery,
+    .booking {
+        padding: 65px 5%;
+    }
+
+    .features-grid,
+    .prices-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid img {
+        height: 240px;
+    }
+}
+
+
+/* ==============================
+   10. ТЕЛЕФОНЫ
+============================== */
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 90vh;
+        min-height: 90svh;
+        padding: 35px 6%;
+        background-position: center;
+    }
+
+    .hero-label {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 52px);
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-button {
+        width: 100%;
+    }
+
+    .features,
+    .prices,
+    .gallery,
+    .booking {
+        padding: 55px 6%;
+    }
+
+    .features-grid,
+    .prices-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card,
+    .price-card {
+        padding: 24px;
+    }
+
+    .gallery-grid img {
+        height: 260px;
+    }
+
+    .booking-contacts {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .booking-link {
+        width: 100%;
+    }
+
+    footer {
+        padding: 22px 6%;
+    }
+}
+/* АКЦИИ, УСЛОВИЯ И ПРАВИЛА */
+
+.info-section {
+    padding: 75px 7%;
+    background: #E8E9E5;
+    color: #354751;
+}
+
+.info-section:nth-of-type(even) {
+    background: #F7F6F1;
+}
+
+.info-section .section-label {
+    color: #785A42;
+}
+
+.info-section h2 {
+    margin-bottom: 30px;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    padding: 27px;
+    background: #F7F6F1;
+    border: 1px solid #D2D7D7;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(53, 71, 81, 0.04);
+}
+
+.info-card h3 {
+    margin-bottom: 14px;
+    color: #785A42;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.info-card p {
+    margin-bottom: 12px;
+    color: #4D5B60;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .info-section {
+        padding: 55px 6%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 23px;
+    }
+}
+/* ПОДВАЛ САЙТА */
+
+.site-footer {
+    padding: 30px 7%;
+    background: #354751;
+    color: #E8E9E5;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.site-footer a {
+    color: #F1D8BC;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.site-footer .copyright {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.75;
+}
