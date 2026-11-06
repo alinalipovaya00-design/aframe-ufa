@@ -620,6 +620,27 @@ footer a:hover {
     color: white;
     font-size: 15px;
 }
+/* ЛОГОТИП И ШАПКА САЙТА */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 7%;
+    z-index: 100;
+}
+
+.site-logo {
+    display: inline-block;
+}
+
+.site-logo img {
+    display: block;
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+}
 
 @media (max-width: 600px) {
     .lightbox {
@@ -675,24 +696,4 @@ footer a:hover {
         height: 85px;
     }
 }
-/* ЛОГОТИП И ШАПКА САЙТА */
 
-.site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 7%;
-    z-index: 100;
-}
-
-.site-logo {
-    display: inline-block;
-}
-
-.site-logo img {
-    display: block;
-    width: 115px;
-    height: 115px;
-    object-fit: contain;
-}
